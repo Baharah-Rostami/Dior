@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dior Shop</title>
+    <link rel="icon" href="./images/dior_logo_icon_249026.png" type="image/png" >
+    <link rel="stylesheet" href="./css/shop.css">
+</head>
+<body>
+      <section class="main-container">
+    <!-- LEFT: products -->
+    <section class="section">
+      <section class="header">
+        <section class="brand">
+          <div class="larr"> <a href="main.html">Home</a> &larr;</div>
+          <section class="logo">Dior</section>
+          <section>
+            <h1>Dior Shop</h1> 
+            <section style="font-size:12px;color:var(--muted)"> Branded and high-quality products</section>
+          </section>
+        </section>
+        <section class="search-wrap">
+          <input id="search" class="search" type="text" placeholder="Search in products..." />
+        </section>
+      </section>
+
+      <section id="product-list" class="product-list"></section>
+    </section>
+    <!-- RIGHT: cart -->
+    <aside class="section cart-wrap">
+      <section class="cart-head">
+        <section>
+          <section class="cart-title">Shopping cart </section>
+          <section style="font-size:12px;color:var(--muted)">The added items will be displayed here</section>
+        </section>
+        <div style="font-size:13px;color:var(--muted);font-weight:600"> Safe and local🔒 </div>
+      </section>
+
+      <section id="cart-items" class="cart-items"></section>
+
+      <section class="cart-bottom">
+        <section class="total"><div> Total Price</div><div id="total">$0</div></section>
+        <button id="checkout" class="checkout">Payment</button>
+      </section>
+    </aside>
+
+  </section>
+
+  <section id="success" class="success"><div class="dot"></div><div> Item added to cart</div></section>
+  <script src="shop.js"></script>
+</body>
+</html>

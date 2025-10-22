@@ -1,0 +1,513 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background-color: #000;
+  padding: 0 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  transform: translateX(20px);
+}
+
+.logo i {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.nav-links .links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links .links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+.nav-links .links li {
+  margin-top: 10px;
+}
+.nav-links ul.links li a:hover {
+  color: #f07ae6;
+}
+
+#themeToggle,
+#logoutBtn {
+  margin-left: 10px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+#logoutBtn{
+  border-radius: 15px;
+  padding: 5px;
+  background: transparent;
+  color: white;
+  font-weight: 500;
+  /* inset یعنی داخل عنصر سایه داده شود */
+box-shadow: inset 2px 5px 2px rgba(0, 51, 217, 0.5); 
+
+
+}
+
+
+
+#themeToggle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: rgba(65, 65, 65, 0.207);
+}
+
+/* Menu Icons */
+#menu-btn,
+#close-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+body.dark-mode .navbar {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .navbar .links li a {
+  color: #eee;
+}
+
+body.dark-mode .navbar .links li a:hover {
+  color: #f3c0ef;
+}
+
+body.dark-mode .skill {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+  box-shadow: 4px 2px 15px #000;
+}
+
+body.dark-mode .header {
+  background-blend-mode: multiply;
+}
+
+.slider-container {
+  background-color: rgb(202, 192, 192) !important;
+}
+
+body.dark-mode .slider-container {
+  background-color: rgb(46, 44, 46) !important;
+}
+
+body.dark-mode .house {
+  color: white;
+}
+
+body.dark-mode .lead {
+  color: white;
+}
+
+body.dark-mode .dior-main {
+  background: linear-gradient(135deg, #222, #333, #000);
+  color: #eee;
+}
+
+body.dark-mode .dior-image {
+  filter: brightness(0.8) drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+body.dark-mode footer {
+  background-color: #1a1a1a !important;
+  color: #fff;
+}
+
+body.dark-mode .btn-outline-dark {
+  border-color: #fff;
+  color: #fff;
+}
+
+body.dark-mode .btn-outline-dark:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark-mode .top-controls button.button1 {
+  background-color: #444 !important;
+  color: #fff !important;
+}
+
+/* Breakpoint برای 863px - رفتار همبرگر */
+@media screen and (max-width: 863px) {
+  /* لینک‌ها مخفی شوند */
+  .nav-links .links {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    flex-direction: column;
+    width: 260px;
+    height: 100%;
+    background-color: #000;
+    transition: left 0.15s ease;
+    z-index: 15;
+    display: flex; /* برای زمانی که باز شود */
+  }
+
+  /* لینک‌ها متن وسط چین */
+  .links {
+    text-align: center;
+    gap: 30px;
+    flex-direction: column;
+  }
+ #menu-btn{
+  position: absolute;
+  top: -20px;
+ }
+  /* نمایش آیکون منو */
+  #menu-btn,
+  #close-btn {
+    display: block;
+    color: #fff;
+    font-size: 28px;
+  }
+
+  /* وقتی منو باز است */
+  .navigation.show-mobile-menu .navbar .links {
+    left: 0;
+  }
+}
+
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links ul.links {
+    flex-direction: column;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100%;
+    padding-top: 80px;
+    gap: 20px;
+    transition: right 0.3s ease;
+    z-index: 20;
+  }
+
+  .navigation.show-mobile-menu .nav-links ul.links {
+    right: 0;
+  }
+
+  #menu-btn {
+    display: block;
+  }
+
+  #close-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .nav-links {
+    flex: 1;
+  }
+}
+
+/* Header */
+.header {
+  width: 100%;
+  height: 300px;
+  background: url(../images/IMG_1205-2k.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+  padding-top: 20px;
+}
+
+.header h1 {
+  font-size: 45px;
+  font-family: Andalus;
+}
+
+/* Skill Cards */
+.skill-card {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #000;
+}
+
+.text-normal i {
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.text-normal h2 {
+  font-size: 23px;
+  padding-top: 20px;
+}
+
+.text-normal p {
+  font-size: 15px;
+}
+
+.skill {
+  width: 22%;
+  height: 200px;
+  border: 1px solid #0e0b10;
+  border-radius: 10px;
+  box-shadow: 4px 2px 15px #000;
+  background-color: #fff;
+  transition: all 0.4s ease;
+}
+
+.skill:hover {
+  transform: translateY(-15px);
+  border: 2px solid #5a3456;
+}
+
+@media screen and (max-width: 580px) {
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skill {
+    min-width: 66%;
+    height: 230px;
+  }
+
+  .skill p {
+    padding-top: 10px;
+  }
+}
+
+/* Dior Main Section */
+.dior-main {
+  margin-top: 100px;
+  background: linear-gradient(135deg, #fff, #fce4ec, #000);
+  color: #111;
+  border-top: 2px solid #f8d7da;
+  border-bottom: 2px solid #f8d7da;
+  overflow: hidden;
+}
+
+.dior-main h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #000;
+}
+
+.dior-main p {
+  color: #333;
+  line-height: 1.7;
+}
+
+.dior-image {
+  width: 400px;
+  height: 400px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+  transition: transform 0.6s ease;
+}
+
+.dior-image:hover {
+  transform: scale(1.05);
+}
+
+.btn-outline-dark {
+  border: 1.5px solid #000;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+.btn-outline-dark:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@media screen and (max-width: 580px) {
+  .dior-main {
+    margin-top: 900px;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .dior-image {
+    max-width: 200px;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #000 !important;
+}
+
+.text-pink {
+  color: #f3c0ef;
+}
+
+.text-pink:hover {
+  color: #e4e0e3;
+  transition: 0.3s;
+}
+
+/* Login Section */
+.main-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000, #3a003a, #8a008a);
+}
+
+.login-form {
+  width: 40%;
+  max-width: 420px;
+  height: auto;
+  padding: 30px 20px;
+  margin: 30px 70px;
+  background-color: rgba(255, 105, 180, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid #5a3456;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  color: #f085e4;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+.login-form h1 {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  width: 80%;
+  height: 40px;
+  margin-top: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #f085e4;
+  border-radius: 10px;
+  outline: none;
+  color: #fff;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+.login-form button {
+  width: 60%;
+  height: 40px;
+  margin-top: 40px;
+  border-radius: 20px;
+  background-color: #f07ae6;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #fff;
+  color: #f07ae6;
+}
+
+/* Social Icons */
+.social-links {
+  margin-top: 50px;
+}
+
+.social-links i {
+  padding: 0 15px;
+  font-size: 25px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.social-links i:hover {
+  color: #f07ae6;
+}
+
+/* Form Message */
+#formMessage {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .login-form {
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-form {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .login-form h1 {
+    font-size: 35px;
+  }
+
+  .social-links i {
+    font-size: 22px;
+  }
+}

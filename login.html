@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dior Login</title>
+  <link rel="icon" href="./images/dior_logo_icon_249026.png" type="image/png" >
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* keep minimal so your CSS isn't affected */
+    .login-form{max-width:420px;margin:60px auto;padding:22px;background:rgba(0, 0, 0, 0.95);border-radius:10px}
+    .login-form input{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #ccc}
+    .login-form button{width:100%;padding:10px;border-radius:6px}
+    .error{color:#b00020;font-size:0.9rem;margin-top:-6px;margin-bottom:8px}
+    .muted{color:#000000;font-size:.9rem}
+  </style>
+</head>
+<body style="background: url(./images/background.jpg) no-repeat center/cover;">
+  <main class="main-login">
+    <div class="login-form" role="form" aria-labelledby="loginTitle">
+      <h1 id="loginTitle">Login</h1>
+      <form id="loginForm" novalidate>
+        <label for="username">Full Name</label>
+        <input type="text" id="username" name="username" placeholder="Full Name:" required aria-required="true" />
+        <div id="userError" class="error" aria-live="polite"></div>
+
+        <label for="useremail">Email</label>
+        <input type="email" id="useremail" name="useremail" placeholder="Email:" required aria-required="true" />
+        <div id="emailError" class="error" aria-live="polite"></div>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password:" required aria-required="true" />
+        <div id="passError" class="error" aria-live="polite"></div>
+
+        <button type="submit" id="submitBtn">Login</button>
+      </form>
+
+      <!-- Social Icons -->
+      <div class="social-links mt-3">
+        <a href="https://www.linkedin.com/in/bahar-rustami-87b21a28a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/BaharahRostami" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://github.com/Baharah-Rostami" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:rostamibahara0@gmail.com" target="_blank" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+
+      <!-- message -->
+      <p id="formMessage" class="muted" aria-live="polite"></p>
+    </div>
+  </main>
+
+  <script src="dior.js"></script>
+</body>
+</html>

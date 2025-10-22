@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dior Company</title>
+  <link rel="icon" href="./images/dior_logo_icon_249026.png" type="image/png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    /* small inline style for tiny JS components */
+    .top-controls{
+      position:fixed; left:12px; top:12px; z-index:9999; display:flex; gap:8px;
+    }
+    .top-controls button{
+      padding:8px 10px; border-radius:8px; border:1px solid rgba(0,0,0,0.05);
+      background:rgba(255,255,255,0.9);
+    }
+    .slider-container{margin:20px auto; max-width:900px;}
+    .slides{display:flex; transition:transform .4s ease-in-out; overflow:hidden; border-radius:8px;}
+    .slide{min-width:100%; display:flex; align-items:center; justify-content:center;}
+    .slide img{width:100%; height:420px; object-fit:cover;}
+    .slider-controls{display:flex; justify-content:space-between; margin-top:8px;}
+    .hidden{display:none !important;}
+    #toast{
+      position:fixed; right:16px; bottom:16px; background:#222; color:#fff;
+      padding:10px 14px; border-radius:8px; opacity:0; transform:translateY(12px);
+      transition:all .25s;
+    }
+    #toast.show{opacity:1; transform:translateY(0);}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navigation"> 
+    <section class="navbar" style="position: fixed !important;">
+      <!-- Logo -->
+      <section class="logo">
+        <i class="fas fa-gem"></i>
+      </section>
+
+      <!-- Nav Links -->
+      <section class="nav-links">
+        <ul class="links">
+          <i class="fa fa-times" id="close-btn" aria-hidden="true"></i>
+          <li><a href="main.html" target="_self" >Home</a></li>
+          <li><a href="shop.html" target="_self">Shop</a></li>
+          <li><a href="contact.html" target="_self">Contact</a></li>
+          <button id="themeToggle" class="button1" aria-pressed="false" title="Toggle dark mode">🌙</button>
+          <button id="logoutBtn" class="hidden" title="Logout">Logout</button>
+        </ul>
+        <i class="fa fa-bars" id="menu-btn" aria-hidden="true"></i>
+      </section>
+
+      <!-- Top Controls -->
+      <div class="top-controls"></div>
+    </section>
+  </nav>
+
+  <!-- Header -->
+  <section class="header">
+    <h1 style="padding-top: 60px;">Dior</h1>
+    <p>LA GALERIE</p>
+
+    <section class="skill-card text-normal">
+     <section class="skill">
+                <i class="fas fa-person-dress"></i>
+                <h2>Haute Couture</h2>
+                <p>We creat exclusive high-fashion collections that inspire elegance and set new trends in the world of style.</p>
+            </section>
+            <section class="skill">
+                <i class="fas fa-shirt"></i>
+                <h2>Luxury Fashion</h2>
+                <p>Our ready-to-wear clothing shoes, and accessories combine timeless design with modern sophistication.</p>
+               
+            </section>
+            <section class="skill">
+                <i class="fas fa-spray-can-sparkles"></i>
+                <h2>fragrances & Beauty</h2>
+                <p>From iconic perfumes to skincare and cosmetics, Dior celebrates beauty with innovation and artistry.</p>
+            </section>
+            <section class="skill">
+                <i class="fas fa-gem"></i>
+                <h2>Leather Goods & Jewelry</h2>
+                <p>We craft signature handbags, fine jewelry, and accessories that embody luxury and refinement.</p>
+            </section>
+    </section>
+  </section>
+
+  <main>
+    <section class="dior-main py-5">
+      <section class="container">
+        <section class="row align-items-center">
+          <section class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+            <h2 class="fw-bold mb-3 house">The House of Dior</h2>
+            <p class="lead">Since 1946, Dior has defined elegance, innovation, and timeless beauty. 
+          Blending tradition with modern vision, Dior’s creations embody luxury, 
+          femininity, and artistic excellence — from haute couture to fragrance.</p>
+            <button class="btn btn-outline-dark mt-3 px-4 py-2" id="exploreBtn">Explore More</button>
+          </section>
+          <section class="col-md-6 text-center">
+            <img src="./images/dior.logo.png" alt="Dior Logo" class="img-fluid dior-image">
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <section class="slider-container card container" aria-labelledby="sliderTitle" style="padding:18px">
+      <h3 id="sliderTitle">Gallery</h3>
+      <div class="slides" id="slidesWrapper" role="region" aria-roledescription="carousel" aria-live="polite">
+        <div class="slide"><img src="./images/bag.jpg" alt="sample 1"></div>
+        <div class="slide"><img src="./images/watch.jpg" alt="sample 2"></div>
+        <div class="slide"><img src="./images/dress.jpg" alt="sample 3"></div>
+      </div>
+      <div class="slider-controls">
+        <div>
+          <button id="prev" class="btn btn-outline-secondary">Prev</button>
+          <button id="next" class="btn btn-secondary">Next</button>
+        </div>
+        <div>
+          <button id="addSlideBtn" class="btn">Add Slide</button>
+          <button id="toggleExtraBtn" class="btn">Show/Hide Info</button>
+        </div>
+      </div>
+      <div id="extraInfo" class="mt-3 hidden" aria-hidden="true">
+        <p class="small text-muted">This is extra info that you can show or hide. It demonstrates DOM update and toggling.</p>
+      </div>
+    </section>
+
+    <section class="container mt-4">
+      <div class="card p-3" id="welcomeCard" aria-live="polite">
+        <strong id="welcomeText">Welcome — please login</strong>
+        <div class="small text-muted" id="sessionMeta">Session info will appear here</div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-light py-5">
+  <section class="container">
+    <section class="row align-items-center">
+      <!-- Left Info -->
+      <section class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+        <h2 class="fw-bold text-light">DIOR</h2>
+        <p class="text-secondary">
+          Elegance Art. Timeless beauty. <br>
+          Discover the world of Dior and redefine luxury.
+        </p>
+
+        <h4 class="text-light mt-4">Quick Links</h4>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-decoration-none text-pink d-block">| Home</a></li>
+          <li><a href="shop.html" class="text-decoration-none text-pink d-block">| Shopping</a></li>
+          <li><a href="login.html" class="text-decoration-none text-pink d-block">| Contact</a></li>
+        </ul>
+
+        <h4 class="text-light mt-4">Follow Us</h4>
+        <section class="d-flex justify-content-center justify-content-md-start gap-3">
+          <a href="https://www.linkedin.com/in/bahar-rustami-87b21a28a" class="text-pink fs-5"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/BaharahRostami" class="text-pink fs-5"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://github.com/Baharah-Rostami" class="text-pink fs-5"><i class="fa-brands fa-github"></i></a>
+          <a href="https://mailto:rostamibahara0@gmail.com" class="text-pink fs-5"><i class="fa-solid fa-envelope"></i></a>
+        </section>
+      </section>
+
+      <!-- Right Image -->
+      <section class="col-md-6 text-center">
+        <img src="./images/dress.jpg" alt="Dior Dress" class="img-fluid rounded shadow">
+        <section class="footer-bottom mt-4 text-secondary small">
+          © 2025 Dior. All Rights Reserved. | Designed by <span class="text-pink">Baharah Rostami</span>.
+        </section>
+      </section>
+    </section>
+  </section>
+</footer>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="dior.js"></script>
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      themeToggle.textContent = '☀️';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        themeToggle.textContent = '☀️';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        themeToggle.textContent = '🌙';
+      }
+    });
+
+    // Navbar Mobile Toggle
+const menuBtn = document.getElementById('menu-btn');
+const closeBtn = document.getElementById('close-btn');
+const navigation = document.querySelector('.navigation');
+
+menuBtn.addEventListener('click', () => {
+  navigation.classList.add('show-mobile-menu');
+});
+
+closeBtn.addEventListener('click', () => {
+  navigation.classList.remove('show-mobile-menu');
+});
+
+// Optional: Close menu when clicking a link
+const navLinks = document.querySelectorAll('.nav-links ul.links li a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navigation.classList.remove('show-mobile-menu');
+  });
+});
+
+
+
+  </script>
+</body>
+</html>
