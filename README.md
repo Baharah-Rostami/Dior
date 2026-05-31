@@ -76,4 +76,4 @@ Feel free to fork this project and add more features like:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/dior-store.git
+git clone https://github.com/Baharah-Rostami/Dior.git
