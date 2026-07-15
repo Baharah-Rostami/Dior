@@ -1,54 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dior Shop</title>
-    <link rel="icon" href="./images/dior_logo_icon_249026.png" type="image/png" >
-    <link rel="stylesheet" href="./css/shop.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Dior</title>
+  <link rel="icon" href="./images/dior-brand.jpg" type="image/png">
+  <link rel="stylesheet" href="./css/shop.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
 </head>
+
 <body>
-      <section class="main-container">
-    <!-- LEFT: products -->
-    <section class="section">
-      <section class="header">
-        <section class="brand">
-          <div class="larr"> <a href="index.html">Home</a> &larr;</div>
-          <section class="logo">Dior</section>
-          <section>
-            <h1>Dior Shop</h1> 
-            <section style="font-size:12px;color:var(--muted)"> Branded and high-quality products</section>
-          </section>
-        </section>
-        <section class="search-wrap">
-          <input id="search" class="search" type="text" placeholder="Search in products..." />
-        </section>
-      </section>
+  <nav class="navbar navbar-expand-lg fixed-top dior-navbar">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand dior-logo" href="#">
+        CHRISTIAN DIOR
+      </a>
 
-      <section id="product-list" class="product-list"></section>
-    </section>
-    <!-- RIGHT: cart -->
-    <aside class="section cart-wrap">
-      <section class="cart-head">
-        <section>
-          <section class="cart-title">Shopping cart </section>
-          <section style="font-size:12px;color:var(--muted)">The added items will be displayed here</section>
-        </section>
-        <div style="font-size:13px;color:var(--muted);font-weight:600"> Safe and local🔒 </div>
-      </section>
+      <!-- Mobile Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
 
-      <section id="cart-items" class="cart-items"></section>
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <section class="cart-bottom">
-        <section class="total"><div> Total Price</div><div id="total">$0</div></section>
-        <button id="checkout" class="checkout">Payment</button>
-      </section>
-    </aside>
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="collection.html">Collections</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="shop.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+
+        </ul>
+        <!-- Theme Button -->
+        <button id="themeToggle" class="theme-btn">
+          🌙
+        </button>
+
+      </div>
+
+    </div>
+  </nav>
+  <section class="hero">
+
+    <div class="sparkles">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="hero-content">
+      <p class="small-title">LUXURY BOUTIQUE</p>
+
+      <h1>
+        Shop Dior
+      </h1>
+
+      <h2>
+        Experience timeless elegance through exclusive
+        fashion, beauty, fragrances, and iconic accessories.
+      </h2>
+      <button class="hero-btn">
+        Shop Now
+      </button>
+    </div>
+
+    <!-- bottom decoration -->
+    <div class="hero-bottom"></div>
+
+  </section>
+  <section class="categories-section">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <span class="category-subtitle">DISCOVER</span>
+
+        <h2 class="category-title">Shop by Collection</h2>
+
+        <p class="category-text">
+          Explore Dior's iconic collections, from timeless handbags to luxury fragrances and beauty essentials.
+        </p>
+
+      </div>
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-lg-2 col-md-4 col-6">
+
+          <div class="category-card">
+
+            <div class="category-image">
+              <img src="./images/bag.jpg" alt="Bags">
+            </div>
+
+            <h5>Bags</h5>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+
+          <div class="category-card">
+
+            <div class="category-image">
+              <img src="./images/fashion.jpg" alt="Fashion">
+            </div>
+
+            <h5>Fashion</h5>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+
+          <div class="category-card">
+
+            <div class="category-image">
+              <img src="./images/lipstick.webp" alt="Beauty">
+            </div>
+
+            <h5>Beauty</h5>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+
+          <div class="category-card">
+
+            <div class="category-image">
+              <img src="./images/perfume.webp" alt="Fragrance">
+            </div>
+
+            <h5>Fragrance</h5>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+
+          <div class="category-card">
+
+            <div class="category-image">
+              <img src="./images/watch.jpg" alt="Accessories">
+            </div>
+
+            <h5>Accessories</h5>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+
+          <div class="category-card">
+
+            <div class="category-image">
+              <img src="./images/heels.webp" alt="Footwear">
+            </div>
+
+            <h5>Footwear</h5>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </section>
 
-  <section id="success" class="success"><div class="dot"></div><div> Item added to cart</div></section>
+  <section class="shop-products py-5">
+    <div class="container">
+      <div class="shop-filter">
+
+        <input type="text" id="search" class="form-control" placeholder="Search luxury products...">
+
+        <select id="category" class="form-select">
+
+          <option value="All">All Categories</option>
+          <option>Bags</option>
+          <option>Beauty</option>
+          <option>Fragrance</option>
+          <option>Accessories</option>
+          <option>Footwear</option>
+
+        </select>
+
+        <select id="sort" class="form-select">
+          <option value="default">Sort By</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="az">Name A-Z</option>
+        </select>
+
+      </div>
+      <div id="product-list" class="row g-4 mt-4"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <a href="#" class="footer-logo">CHRISTIAN DIOR</a>
+
+          <p class="footer-text">
+            Discover timeless elegance through haute couture,
+            luxury fragrances, beauty, and iconic accessories.
+            Inspired by the legacy of Christian Dior.
+          </p>
+          <div class="footer-social">
+            <a href="https://github.com/Baharah-Rostami" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/baharah-rostami" target="_blank">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="mailto:rostamibahara0@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="https://x.com/" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="collection.html">Collection</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+
+          <h5>Collections</h5>
+
+          <ul>
+
+            <li><a href="collection.html">Haute Couture</a></li>
+            <li><a href="collection.html">Beauty</a></li>
+            <li><a href="collection.html">Fragrance</a></li>
+            <li><a href="collection.html">Accessories</a></li>
+            <li><a href="collection.html">New Arrivals</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+
+          <h5>Contact</h5>
+
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> Paris, France</li>
+            <li><i class="fa-solid fa-envelope"></i> info@dior.com</li>
+            <li><i class="fa-solid fa-phone"></i> +33 1 40 73 73 73</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="footer-bottom">
+        <p>
+          © 2026 Christian Dior. All Rights Reserved.
+        </p>
+        <p>
+          Designed with ❤ Luxury & Elegance
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="dior.js"></script>
+  <script src="product.js"></script>
   <script src="shop.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
