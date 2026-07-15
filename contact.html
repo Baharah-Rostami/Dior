@@ -1,56 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dior Contact</title>
-  <link rel="icon" href="./images/dior_logo_icon_249026.png" type="image/png" >
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./images/dior-brand.jpg" type="image/png">
+  <link rel="stylesheet" href="./css/contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <style>
-    /* keep minimal so your CSS isn't affected */
-    .login-form{max-width:420px;margin:60px auto;padding:22px;background:rgba(0, 0, 0, 0.95);border-radius:10px}
-    .login-form input{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #ccc}
-    .login-form button{width:100%;padding:10px;border-radius:6px}
-    .error{color:#b00020;font-size:0.9rem;margin-top:-6px;margin-bottom:8px}
-    .muted{color:#000000;font-size:.9rem};
-    
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
 </head>
-<body style="background: url(./images/background.jpg) no-repeat center/cover;">
-  <main class="main-login">
-    <div class="login-form" role="form" aria-labelledby="loginTitle">
-      <h1 id="loginTitle">contact with dior</h1>
-      <form id="loginForm" novalidate>
-        <label for="username">Full Name</label>
-        <input type="text" id="username" name="username" placeholder="Full Name:" required aria-required="true" />
-        <div id="userError" class="error" aria-live="polite"></div>
+<body>
+     <nav class="navbar navbar-expand-lg fixed-top dior-navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand dior-logo" href="#">
+                CHRISTIAN DIOR
+            </a>
 
-        <label for="useremail">Email</label>
-        <input type="email" id="useremail" name="useremail" placeholder="Email:" required aria-required="true" />
-        <div id="emailError" class="error" aria-live="polite"></div>
-        
-        <div style="width: 100%; display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: center;">
-            <label for="">your message</label>
-        <textarea name="" id=""></textarea>
+            <!-- Mobile Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="collection.html">Collections</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+                <!-- Theme Button -->
+                <button id="themeToggle" class="theme-btn">
+                    🌙
+                </button>
+
+            </div>
+
         </div>
+    </nav>
+  <section class="contact-page">
+    <div class="container">
+      <div class="contact-title text-center">
+        <span>DIOR MEMBERSHIP</span>
 
-        <button type="submit" id="submitBtn">Send</button>
-      </form>
+        <h2>Welcome To Dior</h2>
 
-      <!-- Social Icons -->
-      <div class="social-links mt-3">
-        <a href="https://www.linkedin.com/in/bahar-rustami-87b21a28a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://twitter.com/BaharahRostami" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://github.com/Baharah-Rostami" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="mailto:rostamibahara0@gmail.com" target="_blank" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <p>
+          Join our world of elegance and discover
+          exclusive collections.
+        </p>
+
       </div>
 
-      <!-- message -->
-      <p id="formMessage" class="muted" aria-live="polite"></p>
-    </div>
-  </main>
 
-  <script src="dior.js"></script>
+      <div class="auth-wrapper">
+        <div class="auth-card" id="authCard">
+          <!-- SIGN IN -->
+
+          <div class="form-side signin">
+            <h3>Sign In</h3>
+            <p>
+              Welcome back to Dior.
+            </p>
+            <form>
+              <input type="email" placeholder="Email">
+              <input type="password" placeholder="Password">
+              <button>
+                Sign In
+              </button>
+
+            </form>
+            <a href="#" id="showSignup">
+              Create an account
+            </a>
+          </div>
+          <!-- SIGN UP -->
+
+          <div class="form-side signup">
+            <h3>Create Account</h3>
+            <p>
+              Become part of Dior elegance.
+            </p>
+            <form>
+              <input type="text" placeholder="Full Name">
+              <input type="email" placeholder="Email">
+              <input type="password" placeholder="Password">
+              <button>
+                Sign Up
+              </button>
+
+            </form>
+            <a href="#" id="showSignin">
+              Already have an account?
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <a href="#" class="footer-logo">CHRISTIAN DIOR</a>
+
+          <p class="footer-text">
+            Discover timeless elegance through haute couture,
+            luxury fragrances, beauty, and iconic accessories.
+            Inspired by the legacy of Christian Dior.
+          </p>
+          <div class="footer-social">
+            <a href="https://github.com/Baharah-Rostami" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/baharah-rostami" target="_blank">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="mailto:rostamibahara0@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="https://x.com/" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="collection.html">Collection</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+
+          <h5>Collections</h5>
+
+          <ul>
+
+            <li><a href="collection.html">Haute Couture</a></li>
+            <li><a href="collection.html">Beauty</a></li>
+            <li><a href="collection.html">Fragrance</a></li>
+            <li><a href="collection.html">Accessories</a></li>
+            <li><a href="collection.html">New Arrivals</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+
+          <h5>Contact</h5>
+
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> Paris, France</li>
+            <li><i class="fa-solid fa-envelope"></i> info@dior.com</li>
+            <li><i class="fa-solid fa-phone"></i> +33 1 40 73 73 73</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="footer-bottom">
+        <p>
+          © 2026 Christian Dior. All Rights Reserved.
+        </p>
+        <p>
+          Designed with ❤ Luxury & Elegance
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./javascript/dior.js"></script>
+  <script src="./javascript/contact.js"></script>
 </body>
+
 </html>

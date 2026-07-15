@@ -1,0 +1,502 @@
+
+.dior-navbar{
+    background:rgba(255,230,238,0.75);
+    backdrop-filter:blur(12px);
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+    padding:18px 0;
+}
+.dior-logo{
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-size:32px;
+    font-weight:600;
+    letter-spacing:8px;
+    color:#8b4c61;
+    text-transform:uppercase;
+    position:relative;
+    transition:.4s;
+}
+.dior-logo:hover{
+    color:#c89b6d;
+    transform:scale(1.05);
+}
+.nav-link{
+    color:#6e4a55;
+    margin:0 12px;
+    position:relative;
+    z-index:1;
+    transition:.4s;
+
+}
+.nav-link::before{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    border-radius:50%;
+    background:#f7d5df;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+    transition:.4s ease;
+}
+.nav-link:hover::before{
+    width:90px;
+    height:90px;
+}
+
+.nav-link:hover{
+    color:#8b4c61;
+}
+
+/* Theme Button */
+.theme-btn{
+    border:none;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#fff;
+    color:#b76e79;
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+
+}
+
+.theme-btn:hover{
+    transform:rotate(20deg);
+
+}
+.dark{
+    background:#151112;
+    color:white;
+
+}
+
+
+.dark .dior-navbar{
+    background:rgba(30,20,25,.85);
+
+}
+
+.dark .dior-logo{
+ color:#f8d5df;
+}
+
+
+.dark .nav-link{
+  color:#f4dfe5 !important;
+}
+.dark .nav-link::before{
+    background:#3a252d;
+}
+.dark .nav-link:hover{
+    color:#f1c48a !important;
+}
+.dark .theme-btn{
+    background:#2b2024;
+    color:#f5d2a5;
+
+}
+/* Mobile menu button */
+
+.navbar-toggler{
+    border:1px solid #c89b6d;
+}
+
+.navbar-toggler-icon{
+
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%238b4c61' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+/* Dark mode hamburger */
+.dark .navbar-toggler-icon{
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23f4dfe5' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.dark .navbar-toggler{
+    border-color:#d8b07a;
+}
+.contact-page{
+
+min-height:100vh;
+padding:100px 0;
+background:
+linear-gradient(
+135deg,
+#fff5f7,
+#f3dce2
+);
+
+display:flex;
+align-items:center;
+
+}
+
+
+.dark .contact-page{
+
+background:
+linear-gradient(
+135deg,
+#181112,
+#2b1b20
+);
+
+}
+
+
+
+.contact-title span{
+
+letter-spacing:5px;
+font-size:14px;
+color:#b76e79;
+
+}
+
+
+.contact-title h2{
+
+font-family:"Playfair Display",serif;
+font-size:55px;
+color:#5d3744;
+margin:20px;
+
+}
+
+
+.dark .contact-title h2{
+
+color:#f8dce5;
+
+}
+
+
+
+.auth-wrapper{
+
+display:flex;
+justify-content:center;
+margin-top:60px;
+
+perspective:1500px;
+
+}
+
+
+
+.auth-card{
+
+width:420px;
+height:550px;
+position:relative;
+transform-style:preserve-3d;
+transition:1s;
+
+}
+
+
+.auth-card.rotate{
+
+transform:rotateY(180deg);
+
+}
+
+
+
+.form-side{
+
+position:absolute;
+width:100%;
+height:100%;
+
+background:white;
+
+border-radius:35px;
+
+padding:50px;
+
+box-shadow:
+0 30px 70px rgba(0,0,0,.15);
+
+backface-visibility:hidden;
+
+text-align:center;
+
+}
+
+
+
+.dark .form-side{
+
+background:#24191d;
+
+}
+
+
+
+.signup{
+
+transform:rotateY(180deg);
+
+}
+
+
+
+.form-side h3{
+
+font-family:"Playfair Display",serif;
+font-size:38px;
+color:#5d3744;
+
+}
+
+
+.dark .form-side h3{
+
+color:#f8dce5;
+
+}
+
+
+
+.form-side p{
+
+color:#888;
+margin-bottom:30px;
+
+}
+
+
+
+.form-side input{
+
+width:100%;
+height:50px;
+
+border-radius:30px;
+
+border:1px solid #ead1d8;
+
+padding:0 20px;
+
+margin-bottom:18px;
+
+}
+
+
+
+.form-side button{
+
+width:100%;
+height:50px;
+
+border:none;
+
+border-radius:30px;
+
+background:#b76e79;
+
+color:white;
+
+font-size:16px;
+
+transition:.4s;
+
+}
+
+
+
+.form-side button:hover{
+
+background:#d8b07a;
+
+}
+
+
+
+.form-side a{
+
+display:block;
+margin-top:25px;
+
+color:#b76e79;
+
+cursor:pointer;
+
+}
+
+/* ===footer=== */
+.footer{
+padding:90px 0 30px;
+background:#fdecef;
+position:relative;
+overflow:hidden;
+}
+
+.dark .footer{
+background:#120d0f;
+}
+
+.footer::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:1px;
+background:linear-gradient(to right,transparent,#d8b07a,transparent);
+}
+
+.footer-logo{
+font-family:"Playfair Display",serif;
+font-size:32px;
+letter-spacing:6px;
+text-decoration:none;
+color:#8b4c61;
+font-weight:600;
+}
+
+.dark .footer-logo{
+color:#f8dce5;
+}
+
+.footer-text{
+margin:25px 0;
+line-height:1.9;
+color:#666;
+max-width:330px;
+}
+
+.dark .footer-text{
+color:#bfb7ba;
+}
+
+.footer h5{
+font-family:"Playfair Display",serif;
+margin-bottom:25px;
+color:#6a4352;
+}
+
+.dark .footer h5{
+color:#f7dce5;
+}
+
+.footer ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.footer ul li{
+margin-bottom:14px;
+}
+
+.footer ul li a{
+text-decoration:none;
+color:#777;
+transition:.35s;
+}
+
+.footer ul li a:hover{
+color:#b76e79;
+padding-left:8px;
+}
+
+.dark .footer ul li a{
+color:#bfb7ba;
+}
+
+.footer-contact li{
+color:#777;
+}
+
+.dark .footer-contact li{
+color:#bfb7ba;
+}
+
+.footer-contact i{
+color:#b76e79;
+margin-right:10px;
+width:18px;
+}
+
+.footer-social{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.footer-social a{
+width:46px;
+height:46px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+background:#fff;
+color:#b76e79;
+font-size:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.dark .footer-social a{
+background:#24191d;
+color:#f8dce5;
+}
+
+.footer-social a:hover{
+background:#b76e79;
+color:#fff;
+transform:translateY(-6px) rotate(12deg);
+}
+
+.footer hr{
+margin:60px 0 25px;
+border-color:rgba(183,110,121,.25);
+}
+
+.footer-bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.footer-bottom p{
+margin:0;
+color:#777;
+font-size:15px;
+}
+
+.dark .footer-bottom p{
+color:#bfb7ba;
+}
+@media(max-width:768px){
+
+.footer{
+text-align:center;
+}
+
+.footer-text{
+margin:20px auto;
+}
+
+.footer-social{
+justify-content:center;
+}
+
+.footer-bottom{
+flex-direction:column;
+}
+
+.footer-logo{
+font-size:26px;
+letter-spacing:4px;
+}
+
+}
